@@ -1,5 +1,13 @@
-FROM sameersbn/ubuntu:14.04.20160121
+FROM ubuntu:trusty
 MAINTAINER sameer@damagehead.com
+
+
+RUN echo 'APT::Install-Recommends 0;' >> /etc/apt/apt.conf.d/01norecommends \
+ && echo 'APT::Install-Suggests 0;' >> /etc/apt/apt.conf.d/01norecommends \
+ && apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y vim.tiny wget sudo net-tools ca-certificates unzip \
+ && rm -rf /var/lib/apt/lists/*
+
 
 ENV PG_APP_HOME="/etc/docker-postgresql"\
     PG_VERSION=9.4 \

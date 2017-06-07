@@ -1,0 +1,10 @@
+RESTART=unless-stopped
+DB_IMAGE=jarek/postgresql
+DB_CONTAINER=itrddb
+#When db is created 
+DB_NAME=itrd
+DB_USER=postgres
+DB_PASSWORD=qweasd123
+DB_PORT=5433
+DB_DIR_DATA=~/data/finv/itrd/db
+
